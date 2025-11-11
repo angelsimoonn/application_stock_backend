@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @Table
@@ -25,4 +26,16 @@ public class Producto {
 
     @Column
     private BigDecimal precio;
+
+    @Column
+    private Integer stock;
+
+    // Relación: un producto pertenece a una categoría
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "categoria_id")
+    private Categoria categoria;
+
+    // Relación: un producto puede tener muchos movimientos
+    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Movimiento> movimientos;
 }

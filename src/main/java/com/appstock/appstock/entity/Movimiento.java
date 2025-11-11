@@ -3,6 +3,8 @@ package com.appstock.appstock.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table
 @Data
@@ -10,10 +12,20 @@ import lombok.*;
 @NoArgsConstructor
 @Setter
 @Getter
-public class Inventario {
+public class Movimiento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column
-    private Integer cantidad;
+    private String nombre;
+
+    @Column
+    private String descripcion;
+
+    @Column
+    private TipoMovimiento tipoMovimiento;
+
+    @Column
+    private LocalDateTime fecha;
 }
