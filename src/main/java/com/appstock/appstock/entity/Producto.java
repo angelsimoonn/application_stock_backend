@@ -18,16 +18,16 @@ public class Producto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(nullable = false)
     private String nombre;
 
     @Column
     private String descripcion;
 
-    @Column
+    @Column(nullable = false)
     private BigDecimal precio;
 
-    @Column
+    @Column(nullable = false)
     private Integer stock;
 
     // Relación: un producto pertenece a una categoría

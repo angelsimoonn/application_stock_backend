@@ -18,14 +18,16 @@ public class Movimiento {
     private Long id;
 
     @Column
-    private String nombre;
-
-    @Column
     private String descripcion;
 
-    @Column
+    @Column(nullable = false)
     private TipoMovimiento tipoMovimiento;
 
-    @Column
+    @Column(nullable = false)
     private LocalDateTime fecha;
+
+    //Relación: Muchos movimientos tienen un producto
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "producto_id", nullable = false)
+    private Producto producto;
 }
