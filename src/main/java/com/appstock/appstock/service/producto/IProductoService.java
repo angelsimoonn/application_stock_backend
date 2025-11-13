@@ -1,5 +1,6 @@
 package com.appstock.appstock.service.producto;
 
+import com.appstock.appstock.dto.ProductoDTO;
 import com.appstock.appstock.entity.Producto;
 
 import java.util.List;
@@ -11,7 +12,7 @@ public interface IProductoService {
 
     Producto addProducto(Producto producto);
 
-    Producto updateProducto(Producto producto);
+    Producto updateProducto(Long id, ProductoDTO producto);
 
-    boolean deleteProducto(Long id) throws Exception;
+    void deleteProducto(Long id) throws Exception;
 }

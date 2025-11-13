@@ -1,5 +1,7 @@
 package com.appstock.appstock.service.producto;
 
+import com.appstock.appstock.dto.ProductoDTO;
+import com.appstock.appstock.entity.Producto;
 import com.appstock.appstock.entity.Producto;
 import com.appstock.appstock.repository.producto.IProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,14 +30,18 @@ public class ProductoService implements IProductoService{
     }
 
     @Override
-    public Producto updateProducto(Producto producto) {
-        return productoRepository.save(producto);
+    public Producto updateProducto(Long id, ProductoDTO producto) {
+        Producto existingProducto = productoRepository.findById(id).orElseThrow(() -> new RuntimeException("Producto con ID: " + id + " no encontrada"));
+        existingProducto.setNombre(producto.getNombre());
+        existingProducto.setDescripcion(producto.getDescripcion());
+        existingProducto.setPrecio(producto.getPrecio());
+        existingProducto.setStock(producto.getStock());
+        return productoRepository.save(existingProducto);
     }
 
     @Override
-    public boolean deleteProducto(Long id) throws Exception {
+    public void deleteProducto(Long id) throws Exception {
         productoRepository.findById(id).orElseThrow(() -> new Exception("No existe el producto"));
         productoRepository.deleteById(id);
-        return true;
     }
 }

@@ -1,5 +1,7 @@
 package com.appstock.appstock.service.movimiento;
 
+import com.appstock.appstock.dto.MovimientoDTO;
+import com.appstock.appstock.entity.Movimiento;
 import com.appstock.appstock.entity.Movimiento;
 import com.appstock.appstock.repository.movimiento.IMovimientoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,14 +30,17 @@ public class MovimientoService implements IMovimientoService {
     }
 
     @Override
-    public Movimiento updateMovimiento(Movimiento movimiento) {
-        return movimientoRepository.save(movimiento);
+    public Movimiento updateMovimiento(Long id, MovimientoDTO movimiento) {
+        Movimiento existingMovimiento = movimientoRepository.findById(id).orElseThrow(() -> new RuntimeException("Movimiento con ID: " + id + " no encontrada"));
+        existingMovimiento.setDescripcion(movimiento.getDescripcion());
+        existingMovimiento.setTipoMovimiento(movimiento.getTipoMovimiento());
+        existingMovimiento.setFecha(movimiento.getFecha());
+        return movimientoRepository.save(existingMovimiento);
     }
 
     @Override
-    public boolean deleteMovimiento(Long id) throws Exception {
+    public void deleteMovimiento(Long id) throws Exception {
         movimientoRepository.findById(id).orElseThrow(() -> new Exception("Movimiento no encontrado"));
         movimientoRepository.deleteById(id);
-        return true;
     }
 }

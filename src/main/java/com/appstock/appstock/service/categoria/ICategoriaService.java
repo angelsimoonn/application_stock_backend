@@ -1,5 +1,6 @@
 package com.appstock.appstock.service.categoria;
 
+import com.appstock.appstock.dto.CategoriaDTO;
 import com.appstock.appstock.entity.Categoria;
 
 import java.util.List;
@@ -11,7 +12,7 @@ public interface ICategoriaService {
 
     Categoria addCategoria(Categoria categoria);
 
-    Categoria updateCategoria(Categoria categoria);
+    Categoria updateCategoria(Long id, CategoriaDTO categoria);
 
-    boolean deleteCategoria(Long id) throws Exception;
+    void deleteCategoria(Long id) throws Exception;
 }

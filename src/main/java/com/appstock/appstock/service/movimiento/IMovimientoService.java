@@ -1,5 +1,6 @@
 package com.appstock.appstock.service.movimiento;
 
+import com.appstock.appstock.dto.MovimientoDTO;
 import com.appstock.appstock.entity.Movimiento;
 import org.springframework.data.repository.CrudRepository;
 
@@ -12,7 +13,7 @@ public interface IMovimientoService {
 
     Movimiento addMovimiento(Movimiento movimiento);
 
-    Movimiento updateMovimiento(Movimiento movimiento);
+    Movimiento updateMovimiento(Long id, MovimientoDTO movimiento);
 
-    boolean deleteMovimiento(Long id) throws Exception;
+    void deleteMovimiento(Long id) throws Exception;
 }

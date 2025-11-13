@@ -1,7 +1,9 @@
 package com.appstock.appstock.service.categoria;
 
+import com.appstock.appstock.dto.CategoriaDTO;
 import com.appstock.appstock.entity.Categoria;
 import com.appstock.appstock.repository.categoria.ICategoriaRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,15 +30,20 @@ public class CategoriaService implements ICategoriaService{
         return categoriaRepository.save(categoria);
     }
 
-    //Guardamos el objeto desde aquí??
+    //Guardamos el objeto desde aquí
     @Override
-    public Categoria updateCategoria(Categoria categoria) {
-        return categoriaRepository.save(categoria);
+    public Categoria updateCategoria(Long id, CategoriaDTO categoria) {
+        Categoria existingCategoria = categoriaRepository.findById(id).orElseThrow(() -> new RuntimeException("Categoria con ID: " + id + " no encontrada"));
+        existingCategoria.setNombre(categoria.getNombre());
+        existingCategoria.setDescripcion(categoria.getDescripcion());
+        return categoriaRepository.save(existingCategoria);
     }
 
     @Override
-    public boolean deleteCategoria(Long id) throws Exception {
+    public void deleteCategoria(Long id) {
+        if (!categoriaRepository.existsById(id)) {
+            throw new EntityNotFoundException("Categoría no encontrada con ID: " + id);
+        }
         categoriaRepository.deleteById(id);
-        return true;
     }
 }
