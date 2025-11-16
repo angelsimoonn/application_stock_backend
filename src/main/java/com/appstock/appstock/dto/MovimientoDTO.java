@@ -1,13 +1,13 @@
 package com.appstock.appstock.dto;
 
 import com.appstock.appstock.entity.TipoMovimiento;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 @AllArgsConstructor
+@NoArgsConstructor
+@Data
 @Getter
 @Setter
 public class MovimientoDTO {

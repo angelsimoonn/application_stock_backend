@@ -45,7 +45,7 @@ public class ProductoController {
         }
     }
 
-    @PostMapping
+    @PostMapping("/producto")
     public ResponseEntity<ProductoDTO> createProducto(@RequestBody ProductoDTO productoDTO){
         try {
             Producto savedProducto = productoService.addProducto(mapper.mapType(productoDTO, Producto.class));

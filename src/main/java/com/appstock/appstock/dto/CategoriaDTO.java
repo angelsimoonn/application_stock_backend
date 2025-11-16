@@ -1,11 +1,11 @@
 package com.appstock.appstock.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.stereotype.Component;
 
 @AllArgsConstructor
+@NoArgsConstructor
+@Data
 @Getter
 @Setter
 public class CategoriaDTO {

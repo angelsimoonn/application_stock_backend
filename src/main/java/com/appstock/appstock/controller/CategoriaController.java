@@ -45,7 +45,7 @@ public class CategoriaController {
         }
     }
 
-    @PostMapping
+    @PostMapping("/categoria")
     public ResponseEntity<CategoriaDTO> createCategoria(@RequestBody CategoriaDTO categoriaDTO){
         try {
             Categoria savedCategoria = categoriaService.addCategoria(mapper.mapType(categoriaDTO, Categoria.class));

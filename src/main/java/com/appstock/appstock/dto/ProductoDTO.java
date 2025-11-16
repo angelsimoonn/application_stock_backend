@@ -1,12 +1,12 @@
 package com.appstock.appstock.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 
 @AllArgsConstructor
+@NoArgsConstructor
+@Data
 @Getter
 @Setter
 public class ProductoDTO {

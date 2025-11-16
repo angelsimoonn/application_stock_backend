@@ -45,7 +45,7 @@ public class MovimientoController {
         }
     }
 
-    @PostMapping
+    @PostMapping("/movimiento")
     public ResponseEntity<MovimientoDTO> createMovimiento(@RequestBody MovimientoDTO movimientoDTO){
         try {
             Movimiento savedMovimiento = movimientoService.addMovimiento(mapper.mapType(movimientoDTO, Movimiento.class));
