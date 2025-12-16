@@ -44,4 +44,9 @@ public class ProductoService implements IProductoService{
         productoRepository.findById(id).orElseThrow(() -> new Exception("No existe el producto"));
         productoRepository.deleteById(id);
     }
+
+    @Override
+    public List<Producto> getProductosPorCategoria(Long categoriaId) {
+        return productoRepository.buscarPorCategoria(categoriaId);
+    }
 }

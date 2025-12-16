@@ -26,9 +26,13 @@ public class Categoria {
     // Relación jerárquica opcional (para subcategorías)
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parent_id")
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private Categoria categoriaPadre;
 
     // Una categoría puede tener muchos productos
     @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private List<Producto> productos;
 }

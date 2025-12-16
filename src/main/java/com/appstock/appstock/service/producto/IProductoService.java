@@ -15,4 +15,6 @@ public interface IProductoService {
     Producto updateProducto(Long id, ProductoDTO producto);
 
     void deleteProducto(Long id) throws Exception;
+
+    List<Producto> getProductosPorCategoria(Long categoriaId);
 }

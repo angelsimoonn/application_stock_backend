@@ -1,5 +1,6 @@
 package com.appstock.appstock.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -10,8 +11,11 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 public class ProductoDTO {
+    private Long id;
     private String nombre;
     private String descripcion;
     private BigDecimal precio;
     private Integer stock;
+    @JsonProperty("categoriaId")
+    private Long categoriaId;
 }

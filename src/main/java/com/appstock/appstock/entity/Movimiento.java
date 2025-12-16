@@ -20,6 +20,7 @@ public class Movimiento {
     @Column
     private String descripcion;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private TipoMovimiento tipoMovimiento;
 
@@ -29,5 +30,7 @@ public class Movimiento {
     //Relación: Muchos movimientos tienen un producto
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "producto_id", nullable = false)
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private Producto producto;
 }

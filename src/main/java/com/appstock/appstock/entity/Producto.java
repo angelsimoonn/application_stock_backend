@@ -33,9 +33,13 @@ public class Producto {
     // Relación: un producto pertenece a una categoría
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "categoria_id")
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private Categoria categoria;
 
     // Relación: un producto puede tener muchos movimientos
     @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ToString.Exclude              // <--- IMPORTANTE
+    @EqualsAndHashCode.Exclude
     private List<Movimiento> movimientos;
 }

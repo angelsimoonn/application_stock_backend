@@ -1,8 +1,10 @@
 package com.appstock.appstock.controller;
 
 import com.appstock.appstock.dto.ProductoDTO;
+import com.appstock.appstock.entity.Categoria;
 import com.appstock.appstock.entity.Producto;
 import com.appstock.appstock.mapper.Mapper;
+import com.appstock.appstock.service.categoria.ICategoriaService;
 import com.appstock.appstock.service.producto.IProductoService;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,8 @@ import java.util.Map;
 public class ProductoController {
     @Autowired
     private IProductoService productoService;
+    @Autowired
+    private ICategoriaService categoriaService;
     @Autowired
     private Mapper mapper;
 
@@ -45,27 +49,62 @@ public class ProductoController {
         }
     }
 
+    // CREAR PRODUCTO (Asegurando la categoría)
     @PostMapping("/producto")
-    public ResponseEntity<ProductoDTO> createProducto(@RequestBody ProductoDTO productoDTO){
+    public ResponseEntity<ProductoDTO> createProducto(@RequestBody ProductoDTO productoDTO) {
         try {
-            Producto savedProducto = productoService.addProducto(mapper.mapType(productoDTO, Producto.class));
-            ProductoDTO responseProducto = mapper.mapType(savedProducto, ProductoDTO.class);
+            // 1. Mapeo básico (Nombre, precio, stock...)
+            Producto producto = mapper.mapType(productoDTO, Producto.class);
 
-            return ResponseEntity.status(HttpStatus.CREATED).body(responseProducto);
+            // 2. ASIGNACIÓN MANUAL DE CATEGORÍA (La clave del éxito)
+            if (productoDTO.getCategoriaId() != null) {
+                Categoria c = categoriaService.getCategoriaById(productoDTO.getCategoriaId());
+                producto.setCategoria(c);
+            }
+
+            // 3. Guardar
+            Producto savedProducto = productoService.addProducto(producto);
+
+            // 4. Devolver respuesta
+            return ResponseEntity.status(HttpStatus.CREATED).body(mapper.mapType(savedProducto, ProductoDTO.class));
         } catch (Exception e) {
-            throw new RuntimeException("Error al crear la producto");
+            throw new RuntimeException("Error al crear el producto: " + e.getMessage());
         }
     }
 
     @PutMapping("/producto/{id}")
-    public ResponseEntity<?> updateProducto(@PathVariable("id") Long id, @RequestBody ProductoDTO productoDTO){
-        Producto producto = null;
-        try {
-            producto = productoService.updateProducto(id, productoDTO);
+    public ResponseEntity<ProductoDTO> updateProducto(@PathVariable("id") Long id, @RequestBody ProductoDTO productoDTO) {
+        // --- CHIVATOS DE DEBUG ---
+        System.out.println("--> PETICIÓN DE ACTUALIZAR RECIBIDA PARA ID: " + id);
+        System.out.println("--> NOMBRE: " + productoDTO.getNombre());
+        System.out.println("--> CATEGORIA ID QUE LLEGA: " + productoDTO.getCategoriaId());
+        // -------------------------
 
-            return new ResponseEntity<>(producto, HttpStatus.OK);
-        } catch (Exception e){
-            throw new RuntimeException("Error al actualizar la producto");
+        try {
+            Producto existingProducto = productoService.getProductoById(id);
+            if (existingProducto == null) throw new RuntimeException("No existe");
+
+            // Actualizamos datos básicos
+            existingProducto.setNombre(productoDTO.getNombre());
+            existingProducto.setDescripcion(productoDTO.getDescripcion());
+            existingProducto.setPrecio(productoDTO.getPrecio());
+            existingProducto.setStock(productoDTO.getStock());
+
+            // IMPORTANTE: ASIGNAR CATEGORÍA
+            if (productoDTO.getCategoriaId() != null) {
+                // Buscamos la categoría y la asignamos
+                Categoria c = categoriaService.getCategoriaById(productoDTO.getCategoriaId());
+                existingProducto.setCategoria(c);
+                System.out.println("--> ASIGNANDO CATEGORÍA: " + c.getNombre());
+            } else {
+                System.out.println("--> ¡OJO! EL CATEGORIA ID HA LLEGADO NULL");
+            }
+
+            Producto updated = productoService.addProducto(existingProducto);
+            return ResponseEntity.ok(mapper.mapType(updated, ProductoDTO.class));
+        } catch (Exception e) {
+            e.printStackTrace(); // Imprime el error real en consola
+            throw new RuntimeException("Error al actualizar");
         }
     }
 
@@ -84,5 +123,12 @@ public class ProductoController {
             response.put("mensaje", "Error al eliminar la categoría con ID: " + id);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
         }
+    }
+
+    @GetMapping("/productos/categoria/{id}")
+    public ResponseEntity<List<ProductoDTO>> getProductosPorCategoria(@PathVariable("id") Long id) {
+        List<Producto> productos = productoService.getProductosPorCategoria(id);
+        List<ProductoDTO> dtos = mapper.mapList(productos, ProductoDTO.class);
+        return ResponseEntity.ok(dtos);
     }
 }

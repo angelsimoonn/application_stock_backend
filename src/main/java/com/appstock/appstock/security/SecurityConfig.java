@@ -3,6 +3,7 @@ package com.appstock.appstock.security;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
@@ -29,7 +30,14 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("api/auth/**").permitAll()
+                        // Login y Registro siempre públicos
+                        .requestMatchers("/api/auth/**").permitAll()
+
+                        // --- CAMBIO AQUÍ ---
+                        // Quitamos "HttpMethod.GET" para permitir GUARDAR (PUT/POST) sin token
+                        .requestMatchers("/api/**").permitAll()
+
+                        // El resto (si hubiera algo fuera de /api) requiere auth
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
