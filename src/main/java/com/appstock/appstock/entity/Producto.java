@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Entity
-@Table
+@Table(name = "productos") // Recomiendo añadir el name explícito si no lo tenías
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -30,16 +30,20 @@ public class Producto {
     @Column(nullable = false)
     private Integer stock;
 
-    // Relación: un producto pertenece a una categoría
+    // --- NUEVO CAMPO IMAGEN ---
+    // Usamos LONGTEXT para que quepan cadenas Base64 muy largas
+    @Column(columnDefinition = "LONGTEXT")
+    private String imagen;
+    // --------------------------
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "categoria_id")
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private Categoria categoria;
 
-    // Relación: un producto puede tener muchos movimientos
     @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true)
-    @ToString.Exclude              // <--- IMPORTANTE
+    @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private List<Movimiento> movimientos;
 }

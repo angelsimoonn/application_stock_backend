@@ -16,6 +16,11 @@ public class ProductoDTO {
     private String descripcion;
     private BigDecimal precio;
     private Integer stock;
+
+    // --- NUEVO CAMPO ---
+    private String imagen;
+    // -------------------
+
     @JsonProperty("categoriaId")
     private Long categoriaId;
 }

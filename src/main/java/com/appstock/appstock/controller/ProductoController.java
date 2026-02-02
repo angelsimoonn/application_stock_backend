@@ -89,6 +89,10 @@ public class ProductoController {
             existingProducto.setDescripcion(productoDTO.getDescripcion());
             existingProducto.setPrecio(productoDTO.getPrecio());
             existingProducto.setStock(productoDTO.getStock());
+            // IMAGEN Solo la cambiamos si nos envían una nueva (no nula)
+            if (productoDTO.getImagen() != null) {
+                existingProducto.setImagen(productoDTO.getImagen());
+            }
 
             // IMPORTANTE: ASIGNAR CATEGORÍA
             if (productoDTO.getCategoriaId() != null) {
@@ -130,5 +134,28 @@ public class ProductoController {
         List<Producto> productos = productoService.getProductosPorCategoria(id);
         List<ProductoDTO> dtos = mapper.mapList(productos, ProductoDTO.class);
         return ResponseEntity.ok(dtos);
+    }
+
+    @PutMapping("/producto/{id}/stock")
+    public ResponseEntity<ProductoDTO> actualizarStock(@PathVariable("id") Long id, @RequestParam("cantidad") int cantidad) {
+        try {
+            Producto producto = productoService.getProductoById(id);
+            if (producto == null) throw new RuntimeException("Producto no encontrado");
+
+            // Calculamos el nuevo stock
+            int nuevoStock = producto.getStock() + cantidad;
+
+            // Evitamos stock negativo
+            if (nuevoStock < 0) nuevoStock = 0;
+
+            producto.setStock(nuevoStock);
+
+            // Guardamos (La categoría y demás datos NO se tocan, así que es seguro)
+            Producto saved = productoService.addProducto(producto);
+
+            return ResponseEntity.ok(mapper.mapType(saved, ProductoDTO.class));
+        } catch (Exception e) {
+            throw new RuntimeException("Error al actualizar stock");
+        }
     }
 }
