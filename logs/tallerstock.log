@@ -1,0 +1,615 @@
+2026-03-04 10:23:57.051 [main] INFO  c.a.appstock.AppstockApplication.logStarting - Starting AppstockApplication v1.0 using Java 23 with PID 21580 (D:\proyecto_appstock\appstock\target\classes started by angel in D:\proyecto_appstock\appstock)
+2026-03-04 10:23:57.054 [main] INFO  c.a.appstock.AppstockApplication.logStartupProfileInfo - The following 1 profile is active: "dev"
+2026-03-04 10:23:57.936 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-04 10:23:57.989 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 47 ms. Found 4 JPA repository interfaces.
+2026-03-04 10:23:58.400 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8081 (http)
+2026-03-04 10:23:58.419 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+2026-03-04 10:23:58.419 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.48]
+2026-03-04 10:23:58.460 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+2026-03-04 10:23:58.460 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1363 ms
+2026-03-04 10:23:58.659 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+2026-03-04 10:23:58.735 [main] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@641ed324
+2026-03-04 10:23:58.736 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+2026-03-04 10:23:58.755 [main] WARN  o.m.jdbc.message.server.ErrorPacket.warn - Error: 1193-HY000: Unknown system variable 'WSREP_ON'
+2026-03-04 10:23:58.769 [main] INFO  org.flywaydb.core.FlywayExecutor.info - Database: jdbc:mariadb://localhost:3307/taller_stock?user=root&password=******** (MariaDB 11.5)
+2026-03-04 10:23:58.777 [main] WARN  o.f.c.i.database.base.Database.warn - Flyway upgrade recommended: MariaDB 11.5 is newer than this version of Flyway and support has not been tested. The latest supported version of MariaDB is 11.2.
+2026-03-04 10:23:58.809 [main] INFO  o.f.core.internal.command.DbValidate.info - Successfully validated 0 migrations (execution time 00:00.026s)
+2026-03-04 10:23:58.809 [main] WARN  o.f.core.internal.command.DbValidate.warn - No migrations found. Are your locations set up correctly?
+2026-03-04 10:23:58.816 [main] INFO  o.f.core.internal.command.DbMigrate.info - Current version of schema `taller_stock`: << Empty Schema >>
+2026-03-04 10:23:58.819 [main] INFO  o.f.core.internal.command.DbMigrate.info - Schema `taller_stock` is up to date. No migration necessary.
+2026-03-04 10:23:58.885 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-04 10:23:58.941 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 6.6.33.Final
+2026-03-04 10:23:58.971 [main] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+2026-03-04 10:23:59.208 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-04 10:23:59.270 [main] INFO  o.hibernate.orm.connections.pooling.logConnectionInfo - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 11.5.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-04 10:23:59.971 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-04 10:24:00.016 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-04 10:24:00.565 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory.<clinit> - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-04 10:24:00.917 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-04 10:24:01.317 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8081 (http) with context path '/'
+2026-03-04 10:24:01.321 [main] INFO  c.a.appstock.AppstockApplication.logStarted - Started AppstockApplication in 4.773 seconds (process running for 5.353)
+2026-03-04 10:24:11.263 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown.shutDownGracefully - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-04 10:24:11.267 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown.doShutdown - Graceful shutdown complete
+2026-03-04 10:24:11.270 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-04 10:24:11.272 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+2026-03-04 10:24:11.274 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+2026-03-04 10:44:24.773 [main] INFO  c.a.appstock.AppstockApplication.logStarting - Starting AppstockApplication v1.0 using Java 23 with PID 22712 (D:\proyecto_appstock\appstock\target\classes started by angel in D:\proyecto_appstock\appstock)
+2026-03-04 10:44:24.775 [main] INFO  c.a.appstock.AppstockApplication.logStartupProfileInfo - The following 1 profile is active: "dev"
+2026-03-04 10:44:25.222 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-04 10:44:25.235 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 8 ms. Found 0 JPA repository interfaces.
+2026-03-04 10:44:25.585 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 8081 (http)
+2026-03-04 10:44:25.596 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+2026-03-04 10:44:25.596 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.48]
+2026-03-04 10:44:25.635 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+2026-03-04 10:44:25.636 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 828 ms
+2026-03-04 10:44:25.808 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+2026-03-04 10:44:25.866 [main] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@59918c8f
+2026-03-04 10:44:25.867 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+2026-03-04 10:44:25.884 [main] WARN  o.m.jdbc.message.server.ErrorPacket.warn - Error: 1193-HY000: Unknown system variable 'WSREP_ON'
+2026-03-04 10:44:25.899 [main] INFO  org.flywaydb.core.FlywayExecutor.info - Database: jdbc:mariadb://localhost:3307/taller_stock?user=root&password=******** (MariaDB 11.5)
+2026-03-04 10:44:25.906 [main] WARN  o.f.c.i.database.base.Database.warn - Flyway upgrade recommended: MariaDB 11.5 is newer than this version of Flyway and support has not been tested. The latest supported version of MariaDB is 11.2.
+2026-03-04 10:44:25.921 [main] INFO  o.f.core.internal.command.DbValidate.info - Successfully validated 0 migrations (execution time 00:00.010s)
+2026-03-04 10:44:25.921 [main] WARN  o.f.core.internal.command.DbValidate.warn - No migrations found. Are your locations set up correctly?
+2026-03-04 10:44:25.930 [main] INFO  o.f.core.internal.command.DbMigrate.info - Current version of schema `taller_stock`: << Empty Schema >>
+2026-03-04 10:44:25.932 [main] INFO  o.f.core.internal.command.DbMigrate.info - Schema `taller_stock` is up to date. No migration necessary.
+2026-03-04 10:44:25.981 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-04 10:44:26.011 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 6.6.33.Final
+2026-03-04 10:44:26.035 [main] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+2026-03-04 10:44:26.221 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-04 10:44:26.274 [main] INFO  o.hibernate.orm.connections.pooling.logConnectionInfo - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 11.5.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-04 10:44:26.475 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-04 10:44:26.479 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-04 10:44:26.518 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-04 10:44:26.795 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration.getOrDeducePassword - 
+
+Using generated security password: e164c0d1-c6cd-49ad-b989-50681548c8a5
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-03-04 10:44:26.802 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer.configure - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-03-04 10:44:26.925 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 8081 (http) with context path '/'
+2026-03-04 10:44:26.930 [main] INFO  c.a.appstock.AppstockApplication.logStarted - Started AppstockApplication in 2.528 seconds (process running for 2.948)
+2026-03-04 10:44:41.910 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown.shutDownGracefully - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-04 10:44:41.915 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown.doShutdown - Graceful shutdown complete
+2026-03-04 10:44:41.919 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-04 10:44:41.920 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+2026-03-04 10:44:41.922 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+2026-03-04 10:54:58.787 [main] INFO  c.a.a.AppstockApplicationTests.logStarting - Starting AppstockApplicationTests v1.0 using Java 21.0.2 with PID 24420 (started by angel in D:\proyecto_appstock\appstock)
+2026-03-04 10:54:58.788 [main] INFO  c.a.a.AppstockApplicationTests.logStartupProfileInfo - The following 1 profile is active: "dev"
+2026-03-04 10:54:59.402 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-04 10:54:59.453 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 44 ms. Found 4 JPA repository interfaces.
+2026-03-04 10:55:00.212 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+2026-03-04 10:55:00.324 [main] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@71567f33
+2026-03-04 10:55:00.326 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+2026-03-04 10:55:00.347 [main] WARN  o.m.jdbc.message.server.ErrorPacket.warn - Error: 1193-HY000: Unknown system variable 'WSREP_ON'
+2026-03-04 10:55:00.364 [main] INFO  org.flywaydb.core.FlywayExecutor.info - Database: jdbc:mariadb://localhost:3307/taller_stock?user=root&password=******** (MariaDB 11.5)
+2026-03-04 10:55:00.372 [main] WARN  o.f.c.i.database.base.Database.warn - Flyway upgrade recommended: MariaDB 11.5 is newer than this version of Flyway and support has not been tested. The latest supported version of MariaDB is 11.2.
+2026-03-04 10:55:00.404 [main] INFO  o.f.core.internal.command.DbValidate.info - Successfully validated 0 migrations (execution time 00:00.017s)
+2026-03-04 10:55:00.404 [main] WARN  o.f.core.internal.command.DbValidate.warn - No migrations found. Are your locations set up correctly?
+2026-03-04 10:55:00.420 [main] INFO  o.f.core.internal.command.DbMigrate.info - Current version of schema `taller_stock`: << Empty Schema >>
+2026-03-04 10:55:00.425 [main] INFO  o.f.core.internal.command.DbMigrate.info - Schema `taller_stock` is up to date. No migration necessary.
+2026-03-04 10:55:00.555 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-04 10:55:00.602 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 6.6.33.Final
+2026-03-04 10:55:00.628 [main] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+2026-03-04 10:55:00.827 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-04 10:55:00.885 [main] INFO  o.hibernate.orm.connections.pooling.logConnectionInfo - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 11.5.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-04 10:55:01.535 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-04 10:55:01.575 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-04 10:55:02.234 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory.<clinit> - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-04 10:55:02.733 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-04 10:55:03.597 [main] INFO  c.a.a.AppstockApplicationTests.logStarted - Started AppstockApplicationTests in 5.135 seconds (process running for 5.917)
+2026-03-04 10:55:04.014 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-04 10:55:04.016 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+2026-03-04 10:55:04.019 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+2026-03-04 11:04:35.289 [main] INFO  c.a.appstock.AppstockApplication.logStarting - Starting AppstockApplication v1.0 using Java 21.0.2 with PID 11092 (D:\proyecto_appstock\appstock\target\classes started by angel in D:\proyecto_appstock\appstock)
+2026-03-04 11:04:35.290 [main] INFO  c.a.appstock.AppstockApplication.logStartupProfileInfo - The following 1 profile is active: "prod"
+2026-03-04 11:04:35.729 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-04 11:04:35.770 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 35 ms. Found 4 JPA repository interfaces.
+2026-03-04 11:04:36.098 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 5000 (http)
+2026-03-04 11:04:36.108 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+2026-03-04 11:04:36.108 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.48]
+2026-03-04 11:04:36.143 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+2026-03-04 11:04:36.144 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 826 ms
+2026-03-04 11:04:36.283 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+2026-03-04 11:04:36.300 [main] WARN  org.mariadb.jdbc.Configuration.warn - `useSsl` option is deprecated, replaced by option `sslMode`
+2026-03-04 11:04:37.554 [main] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@4bfa5eb9
+2026-03-04 11:04:37.556 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+2026-03-04 11:04:37.662 [HikariPool-1:connection-adder] WARN  org.mariadb.jdbc.Configuration.warn - `useSsl` option is deprecated, replaced by option `sslMode`
+2026-03-04 11:04:37.685 [main] WARN  o.m.jdbc.message.server.ErrorPacket.warn - Error: 1193-HY000: Unknown system variable 'WSREP_ON'
+2026-03-04 11:04:37.808 [main] INFO  org.flywaydb.core.FlywayExecutor.info - Database: jdbc:mariadb://bbdd-aws.cfl1gwpumvz4.us-east-1.rds.amazonaws.com/taller_stock?user=admin&password=********&requireSSL=true&useSSL=true&sslMode=VERIFY_FULL (MariaDB 11.8)
+2026-03-04 11:04:38.258 [HikariPool-1:connection-adder] WARN  org.mariadb.jdbc.Configuration.warn - `useSsl` option is deprecated, replaced by option `sslMode`
+2026-03-04 11:04:38.850 [main] WARN  o.f.c.i.database.base.Database.warn - Flyway upgrade recommended: MariaDB 11.8 is newer than this version of Flyway and support has not been tested. The latest supported version of MariaDB is 11.2.
+2026-03-04 11:04:38.886 [HikariPool-1:connection-adder] WARN  org.mariadb.jdbc.Configuration.warn - `useSsl` option is deprecated, replaced by option `sslMode`
+2026-03-04 11:04:39.444 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory.info - Schema history table `taller_stock`.`flyway_schema_history` does not exist yet
+2026-03-04 11:04:39.479 [HikariPool-1:connection-adder] WARN  org.mariadb.jdbc.Configuration.warn - `useSsl` option is deprecated, replaced by option `sslMode`
+2026-03-04 11:04:39.561 [main] INFO  o.f.core.internal.command.DbValidate.info - Successfully validated 0 migrations (execution time 00:00.588s)
+2026-03-04 11:04:39.561 [main] WARN  o.f.core.internal.command.DbValidate.warn - No migrations found. Are your locations set up correctly?
+2026-03-04 11:04:40.072 [HikariPool-1:connection-adder] WARN  org.mariadb.jdbc.Configuration.warn - `useSsl` option is deprecated, replaced by option `sslMode`
+2026-03-04 11:04:40.682 [HikariPool-1:connection-adder] WARN  org.mariadb.jdbc.Configuration.warn - `useSsl` option is deprecated, replaced by option `sslMode`
+2026-03-04 11:04:40.952 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory.info - Creating Schema History table `taller_stock`.`flyway_schema_history` ...
+2026-03-04 11:04:41.309 [HikariPool-1:connection-adder] WARN  org.mariadb.jdbc.Configuration.warn - `useSsl` option is deprecated, replaced by option `sslMode`
+2026-03-04 11:04:41.938 [HikariPool-1:connection-adder] WARN  org.mariadb.jdbc.Configuration.warn - `useSsl` option is deprecated, replaced by option `sslMode`
+2026-03-04 11:04:42.517 [HikariPool-1:connection-adder] WARN  org.mariadb.jdbc.Configuration.warn - `useSsl` option is deprecated, replaced by option `sslMode`
+2026-03-04 11:04:42.784 [main] INFO  o.f.core.internal.command.DbMigrate.info - Current version of schema `taller_stock`: << Empty Schema >>
+2026-03-04 11:04:42.902 [main] INFO  o.f.core.internal.command.DbMigrate.info - Schema `taller_stock` is up to date. No migration necessary.
+2026-03-04 11:04:43.410 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-04 11:04:43.437 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 6.6.33.Final
+2026-03-04 11:04:43.458 [main] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+2026-03-04 11:04:43.607 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-04 11:04:43.885 [main] INFO  o.hibernate.orm.connections.pooling.logConnectionInfo - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 11.8.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-04 11:04:44.474 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-04 11:04:45.338 [main] WARN  o.m.jdbc.message.server.ErrorPacket.warn - Error: 4161-HY000: Unknown data type: 'LONGTEXT'
+2026-03-04 11:04:45.339 [main] WARN  o.h.t.s.i.ExceptionHandlerLoggedImpl.handleException - GenerationTarget encountered exception accepting command : Error executing DDL "create table `productos` (`id` bigint not null auto_increment, `descripcion` varchar(255), `imagen` `LONGTEXT`, `nombre` varchar(255) not null, `precio` decimal(38,2) not null, `stock` integer not null, `categoria_id` bigint, primary key (`id`)) engine=InnoDB" via JDBC [(conn=17894) Unknown data type: 'LONGTEXT']
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "create table `productos` (`id` bigint not null auto_increment, `descripcion` varchar(255), `imagen` `LONGTEXT`, `nombre` varchar(255) not null, `precio` decimal(38,2) not null, `stock` integer not null, `categoria_id` bigint, primary key (`id`)) engine=InnoDB" via JDBC [(conn=17894) Unknown data type: 'LONGTEXT']
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:94)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:576)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:516)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.createTable(AbstractSchemaMigrator.java:316)
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:80)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:233)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:280)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1429)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141)
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:324)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:463)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1517)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:691)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1725)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1474)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1708)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1653)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1708)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1653)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:230)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:184)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:179)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:164)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:96)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:271)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:245)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4452)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1201)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1191)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:747)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:770)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1201)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1191)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:747)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:201)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:410)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:868)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:436)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:128)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:107)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:517)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:219)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:193)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.appstock.appstock.AppstockApplication.main(AppstockApplication.java:10)
+Caused by: java.sql.SQLException: (conn=17894) Unknown data type: 'LONGTEXT'
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:313)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:386)
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:187)
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:1376)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:1315)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:1234)
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:1158)
+	at org.mariadb.jdbc.Statement.executeInternal(Statement.java:1003)
+	at org.mariadb.jdbc.Statement.execute(Statement.java:1132)
+	at org.mariadb.jdbc.Statement.execute(Statement.java:471)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:80)
+	... 121 common frames omitted
+2026-03-04 11:04:46.525 [main] WARN  o.m.jdbc.message.server.ErrorPacket.warn - Error: 1005-HY000: Can't create table `taller_stock`.`movimiento` (errno: 150 "Foreign key constraint is incorrectly formed")
+2026-03-04 11:04:46.526 [main] WARN  o.h.t.s.i.ExceptionHandlerLoggedImpl.handleException - GenerationTarget encountered exception accepting command : Error executing DDL "alter table if exists `movimiento` add constraint `FKiut2jndv21ekmsdrquh0bdy46` foreign key (`producto_id`) references `productos` (`id`)" via JDBC [(conn=17894) Can't create table `taller_stock`.`movimiento` (errno: 150 "Foreign key constraint is incorrectly formed")]
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table if exists `movimiento` add constraint `FKiut2jndv21ekmsdrquh0bdy46` foreign key (`producto_id`) references `productos` (`id`)" via JDBC [(conn=17894) Can't create table `taller_stock`.`movimiento` (errno: 150 "Foreign key constraint is incorrectly formed")]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:94)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:576)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:516)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applyForeignKeys(AbstractSchemaMigrator.java:448)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:269)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:280)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1429)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141)
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:324)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:463)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1517)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:691)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1725)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1474)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1708)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1653)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1708)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1653)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:230)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:184)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:179)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:164)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:96)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:271)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:245)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4452)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1201)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1191)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:747)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:770)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1201)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1191)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:747)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:201)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:410)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:868)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:436)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:128)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:107)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:517)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:219)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:193)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.appstock.appstock.AppstockApplication.main(AppstockApplication.java:10)
+Caused by: java.sql.SQLException: (conn=17894) Can't create table `taller_stock`.`movimiento` (errno: 150 "Foreign key constraint is incorrectly formed")
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:313)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:386)
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:187)
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:1376)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:1315)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:1234)
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:1158)
+	at org.mariadb.jdbc.Statement.executeInternal(Statement.java:1003)
+	at org.mariadb.jdbc.Statement.execute(Statement.java:1132)
+	at org.mariadb.jdbc.Statement.execute(Statement.java:471)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:80)
+	... 120 common frames omitted
+2026-03-04 11:04:46.758 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-04 11:04:47.170 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory.<clinit> - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-04 11:04:47.446 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-04 11:04:47.750 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 5000 (http) with context path '/'
+2026-03-04 11:04:47.759 [main] INFO  c.a.appstock.AppstockApplication.logStarted - Started AppstockApplication in 12.793 seconds (process running for 13.202)
+2026-03-04 11:04:49.804 [main] WARN  o.m.jdbc.message.server.ErrorPacket.warn - Error: 1146-42S02: Table 'taller_stock.productos' doesn't exist
+2026-03-04 11:04:49.805 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logExceptions - SQL Error: 1146, SQLState: 42S02
+2026-03-04 11:04:49.805 [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper.logExceptions - (conn=17894) Table 'taller_stock.productos' doesn't exist
+2026-03-04 11:04:50.040 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger.logMessage - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-03-04 11:04:50.049 [main] ERROR o.s.boot.SpringApplication.reportFailure - Application run failed
+org.springframework.dao.InvalidDataAccessResourceUsageException: could not execute statement [(conn=17894) Table 'taller_stock.productos' doesn't exist] [insert into `productos` (`categoria_id`,`descripcion`,`imagen`,`nombre`,`precio`,`stock`) values (?,?,?,?,?,?)]; SQL [insert into `productos` (`categoria_id`,`descripcion`,`imagen`,`nombre`,`precio`,`stock`) values (?,?,?,?,?,?)]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:281)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:256)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:241)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:560)
+	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61)
+	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:343)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:160)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy2/jdk.proxy2.$Proxy167.save(Unknown Source)
+	at com.appstock.appstock.config.DataLoader.lambda$initData$0(DataLoader.java:48)
+	at org.springframework.boot.SpringApplication.lambda$callRunner$5(SpringApplication.java:788)
+	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:82)
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60)
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:86)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:796)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:787)
+	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:772)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:772)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:325)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.appstock.appstock.AppstockApplication.main(AppstockApplication.java:10)
+Caused by: org.hibernate.exception.SQLGrammarException: could not execute statement [(conn=17894) Table 'taller_stock.productos' doesn't exist] [insert into `productos` (`categoria_id`,`descripcion`,`imagen`,`nombre`,`precio`,`stock`) values (?,?,?,?,?,?)]
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:66)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
+	at org.hibernate.id.insert.GetGeneratedKeysDelegate.performMutation(GetGeneratedKeysDelegate.java:116)
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:47)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:55)
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.doStaticInserts(InsertCoordinatorStandard.java:194)
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.coordinateInsert(InsertCoordinatorStandard.java:132)
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.insert(InsertCoordinatorStandard.java:95)
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:85)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:682)
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:293)
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:274)
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:324)
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:394)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:308)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:224)
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:136)
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:177)
+	at org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:95)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:79)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:55)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:761)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:745)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:320)
+	at jdk.proxy2/jdk.proxy2.$Proxy132.persist(Unknown Source)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:654)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:515)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:284)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:734)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:174)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:149)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	... 26 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: (conn=17894) Table 'taller_stock.productos' doesn't exist
+	at org.mariadb.jdbc.export.ExceptionFactory.createException(ExceptionFactory.java:292)
+	at org.mariadb.jdbc.export.ExceptionFactory.create(ExceptionFactory.java:386)
+	at org.mariadb.jdbc.message.ClientMessage.readPacket(ClientMessage.java:187)
+	at org.mariadb.jdbc.client.impl.StandardClient.readPacket(StandardClient.java:1376)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResults(StandardClient.java:1315)
+	at org.mariadb.jdbc.client.impl.StandardClient.readResponse(StandardClient.java:1234)
+	at org.mariadb.jdbc.client.impl.StandardClient.execute(StandardClient.java:1158)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:91)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:345)
+	at org.mariadb.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:322)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:194)
+	... 70 common frames omitted
+2026-03-04 11:04:50.051 [main] INFO  o.s.b.w.e.tomcat.GracefulShutdown.shutDownGracefully - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-04 11:04:50.055 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown.doShutdown - Graceful shutdown complete
+2026-03-04 11:04:50.058 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-04 11:04:50.059 [main] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+2026-03-04 11:04:50.365 [main] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+2026-03-04 11:06:17.327 [main] INFO  c.a.appstock.AppstockApplication.logStarting - Starting AppstockApplication v1.0 using Java 21.0.2 with PID 16208 (D:\proyecto_appstock\appstock\target\classes started by angel in D:\proyecto_appstock\appstock)
+2026-03-04 11:06:17.329 [main] INFO  c.a.appstock.AppstockApplication.logStartupProfileInfo - The following 1 profile is active: "prod"
+2026-03-04 11:06:17.776 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-04 11:06:17.819 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 38 ms. Found 4 JPA repository interfaces.
+2026-03-04 11:06:18.155 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port 5000 (http)
+2026-03-04 11:06:18.164 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+2026-03-04 11:06:18.164 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.48]
+2026-03-04 11:06:18.197 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+2026-03-04 11:06:18.198 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 841 ms
+2026-03-04 11:06:18.343 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+2026-03-04 11:06:18.361 [main] WARN  org.mariadb.jdbc.Configuration.warn - `useSsl` option is deprecated, replaced by option `sslMode`
+2026-03-04 11:06:19.367 [main] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@5885e231
+2026-03-04 11:06:19.369 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+2026-03-04 11:06:19.478 [HikariPool-1:connection-adder] WARN  org.mariadb.jdbc.Configuration.warn - `useSsl` option is deprecated, replaced by option `sslMode`
+2026-03-04 11:06:19.503 [main] WARN  o.m.jdbc.message.server.ErrorPacket.warn - Error: 1193-HY000: Unknown system variable 'WSREP_ON'
+2026-03-04 11:06:19.627 [main] INFO  org.flywaydb.core.FlywayExecutor.info - Database: jdbc:mariadb://bbdd-aws.cfl1gwpumvz4.us-east-1.rds.amazonaws.com/taller_stock?user=admin&password=********&requireSSL=true&useSSL=true&sslMode=VERIFY_FULL (MariaDB 11.8)
+2026-03-04 11:06:20.074 [HikariPool-1:connection-adder] WARN  org.mariadb.jdbc.Configuration.warn - `useSsl` option is deprecated, replaced by option `sslMode`
+2026-03-04 11:06:20.657 [HikariPool-1:connection-adder] WARN  org.mariadb.jdbc.Configuration.warn - `useSsl` option is deprecated, replaced by option `sslMode`
+2026-03-04 11:06:20.695 [main] WARN  o.f.c.i.database.base.Database.warn - Flyway upgrade recommended: MariaDB 11.8 is newer than this version of Flyway and support has not been tested. The latest supported version of MariaDB is 11.2.
+2026-03-04 11:06:21.328 [HikariPool-1:connection-adder] WARN  org.mariadb.jdbc.Configuration.warn - `useSsl` option is deprecated, replaced by option `sslMode`
+2026-03-04 11:06:21.652 [main] INFO  o.f.core.internal.command.DbValidate.info - Successfully validated 0 migrations (execution time 00:00.833s)
+2026-03-04 11:06:21.652 [main] WARN  o.f.core.internal.command.DbValidate.warn - No migrations found. Are your locations set up correctly?
+2026-03-04 11:06:21.920 [HikariPool-1:connection-adder] WARN  org.mariadb.jdbc.Configuration.warn - `useSsl` option is deprecated, replaced by option `sslMode`
+2026-03-04 11:06:22.575 [HikariPool-1:connection-adder] WARN  org.mariadb.jdbc.Configuration.warn - `useSsl` option is deprecated, replaced by option `sslMode`
+2026-03-04 11:06:23.191 [main] INFO  o.f.core.internal.command.DbMigrate.info - Current version of schema `taller_stock`: << Empty Schema >>
+2026-03-04 11:06:23.206 [HikariPool-1:connection-adder] WARN  org.mariadb.jdbc.Configuration.warn - `useSsl` option is deprecated, replaced by option `sslMode`
+2026-03-04 11:06:23.311 [main] INFO  o.f.core.internal.command.DbMigrate.info - Schema `taller_stock` is up to date. No migration necessary.
+2026-03-04 11:06:23.816 [HikariPool-1:connection-adder] WARN  org.mariadb.jdbc.Configuration.warn - `useSsl` option is deprecated, replaced by option `sslMode`
+2026-03-04 11:06:23.830 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-04 11:06:23.859 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 6.6.33.Final
+2026-03-04 11:06:23.879 [main] INFO  o.h.c.i.RegionFactoryInitiator.initiateService - HHH000026: Second-level cache disabled
+2026-03-04 11:06:24.040 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-04 11:06:24.323 [main] INFO  o.hibernate.orm.connections.pooling.logConnectionInfo - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 11.8.5
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-04 11:06:24.445 [HikariPool-1:connection-adder] WARN  org.mariadb.jdbc.Configuration.warn - `useSsl` option is deprecated, replaced by option `sslMode`
+2026-03-04 11:06:24.926 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-04 11:06:26.456 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-04 11:06:26.895 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory.<clinit> - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-04 11:06:27.196 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-04 11:06:27.505 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port 5000 (http) with context path '/'
+2026-03-04 11:06:27.509 [main] INFO  c.a.appstock.AppstockApplication.logStarted - Started AppstockApplication in 10.512 seconds (process running for 10.874)
+2026-03-04 11:28:51.137 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown.shutDownGracefully - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-04 11:28:51.142 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown.doShutdown - Graceful shutdown complete
+2026-03-04 11:28:51.146 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-04 11:28:51.147 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+2026-03-04 11:28:51.454 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.

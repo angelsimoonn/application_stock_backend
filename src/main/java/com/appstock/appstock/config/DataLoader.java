@@ -22,12 +22,13 @@ public class DataLoader {
                                       IProductoRepository productoRepo,
                                       PasswordEncoder encoder) {
         return args -> {
-            // USUARIO
+            // USUARIO ADMIN POR DEFECTO
             if (usuarioRepo.findByNombre("admin").isEmpty()) {
                 Usuario u = new Usuario();
                 u.setNombre("admin");
                 u.setPassword(encoder.encode("1234"));
                 u.setRol("ADMIN");
+                u.setEmail("angelsaimon02@gmail.com"); // <--- PON TU CORREO REAL PARA PROBAR
                 usuarioRepo.save(u);
             }
 

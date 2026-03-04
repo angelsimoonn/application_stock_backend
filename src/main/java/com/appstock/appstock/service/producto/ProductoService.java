@@ -6,11 +6,16 @@ import com.appstock.appstock.entity.Producto;
 import com.appstock.appstock.repository.producto.IProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 @Service
 public class ProductoService implements IProductoService{
+
+    private final Logger logger = LoggerFactory.getLogger(ProductoService.class);
+
     @Autowired
     IProductoRepository productoRepository;
 

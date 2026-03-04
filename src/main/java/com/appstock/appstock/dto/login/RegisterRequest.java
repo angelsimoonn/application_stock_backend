@@ -1,9 +1,13 @@
 package com.appstock.appstock.dto.login;
 
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class RegisterRequest {
     private String nombre;
     private String password;
+    private String email;
 }

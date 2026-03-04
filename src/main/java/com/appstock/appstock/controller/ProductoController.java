@@ -6,7 +6,10 @@ import com.appstock.appstock.entity.Producto;
 import com.appstock.appstock.mapper.Mapper;
 import com.appstock.appstock.service.categoria.ICategoriaService;
 import com.appstock.appstock.service.producto.IProductoService;
+import com.appstock.appstock.service.producto.ProductoService;
 import jakarta.persistence.EntityNotFoundException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +23,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api")
 public class ProductoController {
+    private final Logger logger = LoggerFactory.getLogger(ProductoService.class);
     @Autowired
     private IProductoService productoService;
     @Autowired
@@ -68,6 +72,7 @@ public class ProductoController {
             // 4. Devolver respuesta
             return ResponseEntity.status(HttpStatus.CREATED).body(mapper.mapType(savedProducto, ProductoDTO.class));
         } catch (Exception e) {
+            logger.error(e.getMessage(), e.getStackTrace(), e);
             throw new RuntimeException("Error al crear el producto: " + e.getMessage());
         }
     }
@@ -121,9 +126,11 @@ public class ProductoController {
             response.put("mensaje", "La categoría ha sido eliminada con éxito");
             return ResponseEntity.ok(response); // 200 OK
         } catch (EntityNotFoundException e) {
+            logger.error(e.getMessage(), e.getStackTrace(), e);
             response.put("mensaje", "No se encontró la categoría con ID: " + id);
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
         } catch (Exception e) {
+            logger.error(e.getMessage(), e.getStackTrace(), e);
             response.put("mensaje", "Error al eliminar la categoría con ID: " + id);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
         }

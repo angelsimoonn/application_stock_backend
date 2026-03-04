@@ -15,10 +15,11 @@ public class UsuarioService {
     private final UsuarioRepository usuarioRepository;
     private final PasswordEncoder passwordEncoder;
 
-    public Usuario crearUsuario(String nombre, String password, String rol) {
+    public Usuario crearUsuario(String nombre, String password, String email, String rol) {
         Usuario u = new Usuario();
         u.setNombre(nombre);
         u.setPassword(passwordEncoder.encode(password));
+        u.setEmail(email); // <--- GUARDAMOS EMAIL
         u.setRol(rol == null ? "ROLE_USER" : rol);
         return usuarioRepository.save(u);
     }

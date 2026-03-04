@@ -32,7 +32,7 @@ public class Producto {
 
     // --- NUEVO CAMPO IMAGEN ---
     // Usamos LONGTEXT para que quepan cadenas Base64 muy largas
-    @Column(columnDefinition = "LONGTEXT")
+    @Column
     private String imagen;
     // --------------------------
 
