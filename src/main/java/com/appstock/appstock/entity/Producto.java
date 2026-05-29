@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Entity
-@Table(name = "productos") // Recomiendo añadir el name explícito si no lo tenías
+@Table(name = "productos")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -32,7 +32,7 @@ public class Producto {
 
     // --- NUEVO CAMPO IMAGEN ---
     // Usamos LONGTEXT para que quepan cadenas Base64 muy largas
-    @Column
+    @Column(name = "imagen", columnDefinition = "TEXT")
     private String imagen;
     // --------------------------
 

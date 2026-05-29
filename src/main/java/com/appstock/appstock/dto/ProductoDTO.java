@@ -1,6 +1,7 @@
 package com.appstock.appstock.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.constraints.*;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -12,15 +13,25 @@ import java.math.BigDecimal;
 @Setter
 public class ProductoDTO {
     private Long id;
+
+    @NotBlank(message = "El nombre del producto es obligatorio")
+    @Size(min = 2, max = 100, message = "El nombre debe tener entre 2 y 100 caracteres")
     private String nombre;
+
+    @Size(max = 500, message = "La descripción no puede superar los 500 caracteres")
     private String descripcion;
+
+    @NotNull(message = "El precio es obligatorio")
+    @DecimalMin(value = "0.01", message = "El precio debe ser mayor que 0")
     private BigDecimal precio;
+
+    @NotNull(message = "El stock es obligatorio")
+    @Min(value = 0, message = "El stock no puede ser negativo")
     private Integer stock;
 
-    // --- NUEVO CAMPO ---
     private String imagen;
-    // -------------------
 
+    @NotNull(message = "La categoría es obligatoria")
     @JsonProperty("categoriaId")
     private Long categoriaId;
 }

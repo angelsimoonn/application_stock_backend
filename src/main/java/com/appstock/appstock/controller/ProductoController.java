@@ -14,6 +14,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 import java.util.HashMap;
 import java.util.List;
@@ -22,6 +28,7 @@ import java.util.Map;
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/api")
+@Tag(name = "Productos", description = "Gestión de productos del inventario")
 public class ProductoController {
     private final Logger logger = LoggerFactory.getLogger(ProductoService.class);
     @Autowired
@@ -31,6 +38,10 @@ public class ProductoController {
     @Autowired
     private Mapper mapper;
 
+    @Operation(summary = "Obtener todos los productos", description = "Retorna una lista de todos los productos disponibles en el inventario")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Lista de productos obtenida exitosamente")
+    })
     @GetMapping("/productos")
     public ResponseEntity<List<ProductoDTO>> getProductos(){
         List<Producto> productos = productoService.getProductos();
@@ -40,8 +51,14 @@ public class ProductoController {
         return ResponseEntity.ok(productosDTO);
     }
 
+    @Operation(summary = "Obtener producto por ID", description = "Retorna un producto específico según su ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Producto encontrado"),
+            @ApiResponse(responseCode = "404", description = "Producto no encontrado")
+    })
     @GetMapping("/producto/{id}")
-    public ResponseEntity<ProductoDTO> getProducto(@PathVariable("id") Long id){
+    public ResponseEntity<ProductoDTO> getProducto(
+            @Parameter(description = "ID del producto a buscar") @PathVariable("id") Long id){
         try {
             Producto producto = productoService.getProductoById(id);
 
@@ -53,9 +70,14 @@ public class ProductoController {
         }
     }
 
-    // CREAR PRODUCTO (Asegurando la categoría)
+    @Operation(summary = "Crear nuevo producto", description = "Crea un nuevo producto en el inventario")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Producto creado exitosamente"),
+            @ApiResponse(responseCode = "400", description = "Datos inválidos")
+    })
     @PostMapping("/producto")
-    public ResponseEntity<ProductoDTO> createProducto(@RequestBody ProductoDTO productoDTO) {
+    public ResponseEntity<ProductoDTO> createProducto(
+            @Parameter(description = "Datos del producto a crear") @Valid @RequestBody ProductoDTO productoDTO) {
         try {
             // 1. Mapeo básico (Nombre, precio, stock...)
             Producto producto = mapper.mapType(productoDTO, Producto.class);
@@ -77,8 +99,16 @@ public class ProductoController {
         }
     }
 
+    @Operation(summary = "Actualizar producto", description = "Actualiza los datos de un producto existente")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Producto actualizado exitosamente"),
+            @ApiResponse(responseCode = "404", description = "Producto no encontrado"),
+            @ApiResponse(responseCode = "400", description = "Datos inválidos")
+    })
     @PutMapping("/producto/{id}")
-    public ResponseEntity<ProductoDTO> updateProducto(@PathVariable("id") Long id, @RequestBody ProductoDTO productoDTO) {
+    public ResponseEntity<ProductoDTO> updateProducto(
+            @Parameter(description = "ID del producto a actualizar") @PathVariable("id") Long id,
+            @Parameter(description = "Nuevos datos del producto") @Valid @RequestBody ProductoDTO productoDTO) {
         // --- CHIVATOS DE DEBUG ---
         System.out.println("--> PETICIÓN DE ACTUALIZAR RECIBIDA PARA ID: " + id);
         System.out.println("--> NOMBRE: " + productoDTO.getNombre());
@@ -117,8 +147,14 @@ public class ProductoController {
         }
     }
 
+    @Operation(summary = "Eliminar producto", description = "Elimina un producto del inventario")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Producto eliminado exitosamente"),
+            @ApiResponse(responseCode = "404", description = "Producto no encontrado")
+    })
     @DeleteMapping("/producto/{id}")
-    public ResponseEntity<Map<String, Object>> deleteProducto(@PathVariable Long id) {
+    public ResponseEntity<Map<String, Object>> deleteProducto(
+            @Parameter(description = "ID del producto a eliminar") @PathVariable Long id) {
         Map<String, Object> response = new HashMap<>();
 
         try {
